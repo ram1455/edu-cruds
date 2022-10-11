@@ -20,7 +20,6 @@ const create = async (req, res)=>{
 }
 
 const view =  async(req,res)=>{
-    const {users_id, name, price, stock, status} = req.body
 
     if (req.params.id) {
         try {

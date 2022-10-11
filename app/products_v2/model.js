@@ -1,7 +1,7 @@
-const sequelize = require('../../config/sequelize')
+const remotesequelize = require('../../config/remotesql')
 const {DataTypes } = require('sequelize');
 
-const Product = sequelize.define('Product', {
+const Product = remotesequelize.define('Product', {
   // Model attributes are defined here
   users_id:{
     type: DataTypes.INTEGER,
