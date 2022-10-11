@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
-const { where } = require('sequelize')
 const Product = require('./model')
+const  port = process.env.PORT || 3000
 
 const create = async (req, res)=>{
     const {users_id, name, price, stock, status} = req.body
@@ -51,7 +51,7 @@ const update = async (req,res) =>{
         fs.renameSync(image.path, target)
 
         try {
-            await Product.update({users_id, name, price, stock, status, image_url: `http://localhost:3000/public/${image.originalname}`}, 
+            await Product.update({users_id, name, price, stock, status, image_url: `http://localhost:${port}/public/${image.originalname}`}, 
             {where : {id : req.params.id}})
 
             const result = await Product.findAll({where : {id : req.params.id}})
