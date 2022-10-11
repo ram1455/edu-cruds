@@ -1,21 +1,22 @@
 const {Sequelize} = require('sequelize')
 
-const remotesequelize = new Sequelize({
-    database: 'zhrVVYFUXx',
-    host    : 'remotemysql.com',
-    username : 'zhrVVYFUXx',
-    password : 'wz4odVLaL8',
+const freesql = new Sequelize({
+    database: 'sql6525696',
+    host    : 'sql6.freesqldatabase.com',
+    username : 'sql6525696',
+    password : 'yCmE2YUmMl',
     dialect : 'mysql',
     port : '3306'
-});
+}); 
 
 (async()=>{
     try {
-        await remotesequelize.authenticate();
+        await freesql.authenticate();
         console.log('Connection has been established successfully.'); 
       } catch (error) {
         console.error('Unable to connect to the database:', error);
       }
 })();
 
-module.exports = remotesequelize;
+module.exports = freesql;
+
